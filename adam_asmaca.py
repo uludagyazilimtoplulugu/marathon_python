@@ -9,7 +9,6 @@ secilmis = random.choice(kelimeler).lower()
 dogru_harfler = []
 denenmis_harfler = []
 while hak > 0:
-    tahmin = input("Lütfen bir harf girin: ").lower().strip()
     alt_tire_sayisi = 0
     
     for i in range(len(secilmis)):
@@ -30,6 +29,7 @@ while hak > 0:
             print(harf, end=", ")
         print()
 
+    tahmin = input("Lütfen bir harf girin: ").lower().strip()
     print()
     if len(tahmin) != 1:
         if len(tahmin) == len(secilmis):
