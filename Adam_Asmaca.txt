@@ -1,0 +1,40 @@
+import random as rand: random modülünü kullanmak için bu modülü rand takma adıyla içe aktarır.
+
+sözcükler: Oyunun içinde kullanılacak kelimelerin bulunduğu bir liste.
+
+kelime_bul: random.choice() fonksiyonu kullanılarak sözcükler listesinden rastgele bir kelime seçilir ve bu kelime kelime_bul değişkenine atanır.
+
+kelime: Seçilen kelimenin büyük harflerle yazılmış hali olarak kelime değişkenine atanır.
+
+harf_listesi: kelime stringinin harflerini içeren bir liste oluşturulur.
+
+harf_göster: Oyun sırasında gösterilen tahmin tablosunu (alt çizgiler veya doğru tahmin edilen harfler) tutan bir liste.
+
+for döngüsü: harf_göster listesini başlangıçta tüm harfleri "__" ile doldurur.
+
+hata ve hak: Oyun sırasında yanlış tahmin sayısını ve oyuncunun sahip olduğu hak sayısını saklayan değişkenler.
+
+while hak > 0:: Oyun, oyuncunun hakkı bitene veya kelimeyi doğru tahmin edene kadar devam eder.
+
+tahmin = input("Bir harf tahmin edin: "): Kullanıcıdan bir harf tahmini istenir.
+
+tahmin = tahmin.upper(): Girilen harfi büyük harfe çevirir, böylece kelimenin büyük harflerle yazılmış olmasıyla eşleşir.
+
+if len(tahmin) == 1 and tahmin.isalpha():: Kullanıcının sadece bir harf girmesini ve bu harfin alfabede bir harf olmasını kontrol eder.
+
+if tahmin in harf_listesi:: Kullanıcının tahmin ettiği harf, kelimenin harf listesinde bulunuyorsa:
+
+for döngüsü: Her bir harfin kontrolü yapılır, doğru tahmin edilen harfler harf_göster listesine eklenir.
+
+Yanlış tahmin durumunda, hak ve hata sayıları güncellenir ve bilgi mesajı yazdırılır.
+
+if hata == 5:: Kullanıcının yanlış tahmin sayısı 5'e ulaştığında:
+Oyunu kaybetme mesajı yazdırılır ve break komutu ile döngüden çıkılır.
+
+if "".join(harf_göster) == kelime:: Tahmin tablosu, kelimenin tamamını içeriyorsa:
+Tebrik mesajı yazdırılır ve break komutu ile döngüden çıkılır.
+
+else: Eğer girilen değer sadece bir harf değilse veya alfabedeki bir harf değilse:
+Geçersiz giriş mesajı yazdırılır.
+
+Bu şekilde, oyuncudan bir harf tahmini alınır, doğru tahmin edilen harfler gösterilir, yanlış tahminlerde hak düşer ve oyun devam eder. Oyuncu ya tüm harfleri doğru tahmin edip kazanır ya da hakları biterse kaybeder.
